@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Responsive header</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            list-style: none;
+        }
+
+        .mobile-icon {
+            display: none;
+        }
+
+        .main {
+            width: 100%;
+            padding: 30px 0px;
+            background-color: aqua;
+        }
+
+        .nav {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-list {
+            display: flex;
+        }
+
+        .nav-list li {
+            padding-right: 20px;
+        }
+
+
+        @media (max-width: 991px) {
+            .mobile-icon {
+                display: block;
+                margin: auto;
+                width: 100%;
+            }
+
+            .mobile-icon i {
+                display: flex;
+                justify-content: end;
+            }
+
+            .nav-list {
+                display: block;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                top: 100px;
+                left: -90%;
+            }
+
+            .nav-list li {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="nav">
+            <div class="logo">LOGO.</div>
+            <div class="mobile-icon">
+                <i class="ri-menu-line"></i>
+            </div>
+            <ul class="nav-list">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".mobile-icon").click(function () {
+                $(".nav-list").toggle();
+            })
+        });
+    </script>
+
+</body>
+
+</html>
